@@ -1,0 +1,2 @@
+default
+@yield('content')

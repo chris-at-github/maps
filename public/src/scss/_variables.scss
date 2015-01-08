@@ -1,0 +1,38 @@
+/* Variables
+----------------------------------------------------------------------------------------*/
+/* font */
+$font-serif: 			Georgia, 'Times New Roman', Times, serif;
+$font-sans-serif:	Arial, sans-serif;
+
+/* color */
+$white: 				#fff;
+$black: 				#101010;
+
+$lightpink: 		#ffbbd0;
+$pink: 					#e00d4d;
+$darkpink: 			#c90c45;
+
+$green: 				#39cc12;
+
+$blue: 					#0097D8;
+$darkblue: 			darken($blue, 8%);
+
+$yellow: 				#ffba00;
+$darkyellow: 		#fcad00;
+
+$grey-light: 		#f9f9f9;
+$grey-lighter: 	#e7e7e7;
+$grey: 					#bbb;
+$grey-darker: 	#6d6d6d;
+$grey-dark: 		#494949;
+
+
+/* Alias
+----------------------------------------------------------------------------------------*/
+$h1:	'h1, .h1';
+$h2:	'h2, .h2';
+$h3:	'h3, .h3';
+
+$button:			'button, .button';
+$input-text:	'input[type="text"], input[type="password"]';
+$input-any: 	'input[type="text"], input[type="password"], textarea, select';
