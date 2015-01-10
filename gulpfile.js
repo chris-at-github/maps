@@ -1,11 +1,15 @@
 // include gulp
 var gulp = require('gulp');
 
+// include error handling plugin
+var plumber = require('gulp-plumber');
+
 // include imagemin plugins
 var changed		= require('gulp-changed');
 var imagemin	= require('gulp-imagemin');
 
 // include js plugins
+var browserify	= require('gulp-browserify');
 var concat			= require('gulp-concat');
 var stripDebug	= require('gulp-strip-debug');
 var uglify			= require('gulp-uglify');
@@ -28,15 +32,20 @@ gulp.task('imagemin', function() {
 
 // JS concat, strip debugging and minify
 gulp.task('scripts', function() {
-	gulp.src(['./public/src/js/**/*.js'])
-		// .pipe(stripDebug())
-		// .pipe(uglify())
+	gulp.src('./public/src/js/Application.js')
+		.pipe(plumber())
+		.pipe(browserify({
+			insertGlobals: true
+		}))
+		.pipe(uglify())
+		.pipe(concat('maps.bundle.js'))
 		.pipe(gulp.dest('./public/js/'));
 });
 
 // CSS concat, auto-prefix and minify
 gulp.task('styles', function() {
 	gulp.src('./public/src/scss/*.scss')
+		.pipe(plumber())
 		.pipe(sass())
 		.pipe(autoprefix('last 2 versions'))
 		.pipe(minifyCSS())

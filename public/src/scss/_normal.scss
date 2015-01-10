@@ -94,7 +94,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-	color: $darkblue;
+	color: $blue-dark;
 	text-decoration: underline;
 }
 
@@ -111,7 +111,7 @@ th, td {
 
 thead th {
 	padding: 3px 8px;
-	border-bottom: 2px solid $pink;
+	// border-bottom: 2px solid $blue;
 }
 
 tbody th, td {
@@ -158,31 +158,15 @@ hr, .hr {
 }
 
 ::-moz-selection {
-	background: $pink;
+	background: $blue;
 	color:#fff;
 	text-shadow: none;
 }
 
 ::selection {
-	background: $pink;
+	background: $blue;
 	color:#fff;
 	text-shadow: none;
-}
-
-::-webkit-input-placeholder {
-	@include placeholder-default();
-}
-
-::-moz-placeholder {
-	@include placeholder-default();
-}
-
-:-ms-input-placeholder {
-	@include placeholder-default();
-}
-
-input:-moz-placeholder {
-	@include placeholder-default();
 }
 
 article, aside, footer, header, hgroup, nav, section {
@@ -200,19 +184,8 @@ nav a:hover, nav a:focus, nav a:active {
 
 /* clearfix
 ----------------------------------------------------------------------------------------*/
-.clearfix:before, .clearfix:after {
-	content: '\0020';
-	display: block;
-	height: 0;
-	visibility: hidden;
-}
-
-.clearfix:after {
-	clear: both;
-}
-
 .clearfix {
-	zoom: 1;
+	@include clearfix();
 }
 
 /* verschiedenen Klassen
@@ -231,10 +204,6 @@ nav a:hover, nav a:focus, nav a:active {
 
 .nowrap {
 	white-space: nowrap;
-}
-
-.text-green {
-	color: $green;
 }
 
 .text-grey {
