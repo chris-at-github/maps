@@ -14,16 +14,7 @@ class WorldTile extends Eloquent {
 	 *
 	 * var array
 	 */
-	protected $appends = array('coordinates', 'center');
-
-	/**
-	 * Liefert den Mittelpunkt wenn toArray oder toJson aufgerufen wird
-	 *
-	 * @return array
-	 */
-	public function getCenterAttribute() {
-		return $this->getCenter();
-	}
+	protected $appends = array('coordinates');
 
 	/**
 	 * Liefert die Koordinaten wenn toArray oder toJson aufgerufen wird
@@ -41,36 +32,11 @@ class WorldTile extends Eloquent {
 	 */
 	public function getCoordinates() {
 		$size 	= Config::get('world.tile.size');
-		$center = $this->getCenter();
-		$return	= array();
+		$return	= array(
+			'x' =>  $this->x * $size,
+			'y' =>  $this->y * $size
+		);
 
-		for($i = 0; $i <= 6; $i++) {
-			$angle 		= 2 * pi() / 6 * $i;
-			$return[]	= $center->x + $size * cos($angle);
-			$return[]	= $center->y + $size * sin($angle);
-		}
-
-		return $return;
-	}
-
-	/**
-	 * liefert den Mittelpunkt einer Kachel
-	 *
-	 * @return object Object mit X- und Y-Koordinate
-	 */
-	public function getCenter() {
-		$size 	= Config::get('world.tile.size');
-		$width	= $size * 2;
-		$height	= sqrt(3) / 2 * $width;
-
-		$offset = 0;
-		if(($this->x % 2) == 0) {
-			$offset = $height / 2;
-		}
-
-		return ArrayHelper::toObject(array(
-			'x' => 0.75 * $width * $this->x,
-			'y'	=> $height * $this->y + $offset
-		));
+		return ArrayHelper::toObject($return);
 	}
 }

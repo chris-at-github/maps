@@ -1,14 +1,11 @@
 @include('layouts.header')
 
-	<svg id="world-map-container"></svg>
-
-	<script type="text/javascript">
-		var tileCollection = [
-			@foreach ($tiles as $tile)
-				{{ $tile->toJson() }},
+	<div id="world-map-container">
+		<div class="tile-container">
+			@foreach($tiles as $tile)
+				<div class="tile" style="top: {{$tile->coordinates->y}}px; left: {{$tile->coordinates->x}}px;"></div>
 			@endforeach
-		];
-	</script>
+		</div>
+	</div>
 
-
-@include('layouts.footer', array('scripts' => array('/js/world/index.js')))
+@include('layouts.footer')
