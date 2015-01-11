@@ -8,6 +8,10 @@
 	outline: none;
 }
 
+*, *:after, *:before {
+	@include box-sizing(border-box);
+}
+
 html {
 	overflow-y: scroll;
 	-webkit-text-size-adjust: 100%; /* 2 */
