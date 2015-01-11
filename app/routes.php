@@ -11,3 +11,4 @@
 |
 */
 Route::get('/', 'WorldController@index');
+Route::get('tile/{x}/{y}', 'WorldTileController@index');
