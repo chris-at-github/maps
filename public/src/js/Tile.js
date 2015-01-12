@@ -57,9 +57,10 @@ Tile.prototype.off = function() {
 }
 
 Tile.prototype.activate = function(e) {
-	var url = '/tile/' + this.x + '/' + this.y;
-
-	$.get(url);
+	var url 			= '/tile/' + this.x + '/' + this.y;
+	var container = require('./DataContainer.js');
+	var data 			= new container($('.data-container'));
+			data.load(url);
 }
 
 module.exports = Tile;

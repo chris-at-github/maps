@@ -29,4 +29,19 @@ DataContainer.prototype.set = function(data) {
 	return this;
 }
 
+DataContainer.prototype.load = function(url) {
+	var instance = this;
+
+	$.ajax({
+  	url: url
+  })
+	.done(function(data) {
+  	instance
+  		.set(data)
+  		.activate();
+  });
+
+	return this;
+}
+
 module.exports = DataContainer;
