@@ -17,6 +17,13 @@ class WorldTile extends Eloquent {
 	protected $appends = array('coordinates');
 
 	/**
+	 * Properties, die nicht ueber die Massenzuweisung befuellt werden duerfen
+	 *
+	 * var array
+	 */
+	protected $guarded = array();
+
+	/**
 	 * Liefert die Koordinaten wenn toArray oder toJson aufgerufen wird
 	 *
 	 * @return array
