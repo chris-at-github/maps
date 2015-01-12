@@ -17,6 +17,14 @@ function Tile(element, options) {
 
 	if(element !== undefined) {
 		this.container = $(element);
+
+		if(this.container.data('x') !== undefined) {
+			this.x = this.container.data('x');
+		}
+
+		if(this.container.data('y') !== undefined) {
+			this.y = this.container.data('y');
+		}
 	}
 
 	initialize();
