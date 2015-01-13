@@ -130,12 +130,13 @@ dt {
 
 fieldset {
 	padding: 5px 10px;
-	border: 1px solid $grey-lighter;
+	border: 1px solid $grey-light;
 }
 
 legend {
 	padding: 0 5px;
 	line-height: 1;
+	letter-spacing: 1px;
 }
 
 address {
