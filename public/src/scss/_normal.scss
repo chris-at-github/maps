@@ -20,6 +20,7 @@ html {
 
 body {
 	@include font-default();
+	background: #f8f8f8;
 }
 
 input, textarea, select {
@@ -136,7 +137,6 @@ fieldset {
 legend {
 	padding: 0 5px;
 	line-height: 1;
-	letter-spacing: 1px;
 }
 
 address {
@@ -221,16 +221,4 @@ nav a:hover, nav a:focus, nav a:active {
 
 .text-inline {
 	margin: 0;
-}
-
-/* Listen
-----------------------------------------------------------------------------------------*/
-.list-inline {
-	& {
-		@include clearfix();
-	}
-
-	li {
-		float: left;
-	}
 }

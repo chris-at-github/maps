@@ -2,9 +2,9 @@
 ----------------------------------------------------------------------------------------*/
 .map-container {
 	position: relative;
-	width: 300px;
+	max-width: 100%;
 	height: 200px;
-	background: $white;
+	overflow: hidden;
 }
 
 /* Tile Container
@@ -13,6 +13,7 @@
 	& {
 		position: absolute;
 		top: 0; left: 0;
+		border: 1px solid $grey-light;
 	}
 
 	.tile {
