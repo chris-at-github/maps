@@ -278,7 +278,7 @@
 
 // -------------------------------------------------------------------------------------------------
 // fonts
-@mixin font-default($font-size: 12px, $line-height: 20px) {
+@mixin font-default($font-size: 13px, $line-height: 20px) {
 	font: 400 $font-size $font-sans-serif;
 	line-height: $line-height;
   color: $grey-dark;

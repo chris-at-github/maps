@@ -1,11 +1,9 @@
-<fieldset>
-	<legend>Tile</legend>
+<header>Tile</header>
 
-	<dl>
-		<dt>X:</dt>
-		<dd>{{{$tile->x}}}</dd>
+<dl>
+	<dt>X:</dt>
+	<dd>{{{$tile->x}}}</dd>
 
-		<dt>Y:</dt>
-		<dd>{{{$tile->y}}}</dd>
-	</dl>
-</fieldset>
+	<dt>Y:</dt>
+	<dd>{{{$tile->y}}}</dd>
+</dl>

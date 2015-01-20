@@ -3,8 +3,8 @@
 	return array(
 		'map' => array(
 			'size'	=> array(
-				'x' => 4,
-				'y' => 3
+				'x' => 9,
+				'y' => 5
 			)
 		),
 
