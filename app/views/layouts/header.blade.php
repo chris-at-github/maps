@@ -6,7 +6,7 @@
 	<title>Maps</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Rosario:700,400'>
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu:400,500'>
 	<link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
