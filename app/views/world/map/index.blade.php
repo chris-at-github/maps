@@ -18,11 +18,12 @@
 
 				{{Form::open(array('route' => 'map.create'))}}
 					<div class="form-item">
-						<div class="form-label"><label for="map-name">Kartenname:</label>
+						<div class="form-label"><label for="map-name">Kartenname:</label></div>
 						<div class="form-field">{{Form::text('name', null, array('id' => 'map-name'))}}</div>
 					</div>
 				{{Form::close()}}
 			</div>
+
 			<div class="container data-container hide"></div>
 		</div>
 	</div>
