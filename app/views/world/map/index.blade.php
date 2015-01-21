@@ -15,6 +15,10 @@
 		<div class="grid grid-50">
 			<div class="container">
 				<header>Kartenkonfiguration</header>
+
+				{{Form::open(array('route' => 'map.create'))}}
+				    //
+				{{Form::close()}}
 			</div>
 			<div class="container data-container hide"></div>
 		</div>

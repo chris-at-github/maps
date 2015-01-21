@@ -11,4 +11,9 @@
 |
 */
 Route::get('/', 'WorldController@index');
+Route::get('map/create', array(
+	'as'		=> 'map.create',
+	'uses' 	=> 'WorldController@create'
+));
+
 Route::get('tile/{x}/{y}', 'WorldTileController@index');

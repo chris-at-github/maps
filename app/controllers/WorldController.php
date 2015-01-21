@@ -9,4 +9,7 @@ class WorldController extends ApplicationController {
 			->with('map', $map)
 			->with('tiles', $map->getTiles());
 	}
+
+	public function create() {
+	}
 }
