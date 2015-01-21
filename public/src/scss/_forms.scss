@@ -1,0 +1,216 @@
+/* form
+----------------------------------------------------------------------------------------*/
+#{$input-text}, textarea {
+	width: 450px;
+	max-width: 100%;
+	padding: 3px 8px;
+	border: 1px solid $grey-lighter;
+}
+
+select {
+	width: 468px;
+	max-width: 100%;
+	height: 22px;
+	padding: 0 0 0 4px;
+	border: 1px solid $grey-lighter;
+}
+
+#{$input-any} {
+	&:focus {
+		border: 1px solid $grey-darker;
+		outline: 0;
+	}
+
+	&.form-field-error {
+		border: 1px solid $red;
+		color: $white;
+	}
+}
+
+.form-item {
+	margin: 0 0 10px 0;
+}
+
+.form-item .form-item {
+	margin-bottom: 0;
+}
+
+.form-label {
+	padding: 0 0 4px 1px;
+}
+
+.form-label label {
+	font-weight: normal;
+}
+
+.form-required {
+	color: $blue;
+}
+
+.form-field {
+	position: relative;
+}
+
+/* button
+----------------------------------------------------------------------------------------*/
+.form-actions {
+	& {
+		margin: 0 0 10px 0;
+	}
+
+	#{$button} {
+		margin: 0 5px 0 0;
+		vertical-align: middle;
+	}
+}
+
+.form-actions-right {
+	& {
+		text-align: right;
+	}
+
+	#{$button} {
+		margin: 0 0 0 5px;
+	}
+}
+
+#{$button} {
+	& {
+		margin: 0;
+		padding: 7px 15px;
+		border: 0;
+		background: $grey-lighter;
+		font-weight: normal;
+		color: $black;
+		line-height: 1;
+		vertical-align: top;
+		cursor: pointer;
+	}
+
+	&:hover, &:focus, &:active {
+		background-color: darken($grey-lighter, 15%);
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+a.button {
+	display: inline-block;
+}
+
+.button-submit {
+	background-color: $blue;
+	color: $white;
+}
+
+.button-submit:hover, .button-submit:focus {
+	background-color: $blue-dark;
+}
+
+.button-small {
+	padding: 5px 9px;
+}
+
+.button-large {
+	padding: 12px 16px;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+
+/* button icon
+----------------------------------------------------------------------------------------*/
+// .button-icon {
+// 	width: 26px;
+// 	height: 26px;
+// 	display: inline-block;
+// 	padding: 0;
+// 	background: $pink url(../img/icons.png) no-repeat 0 0;
+// }
+
+// .ie .button-icon {
+// 	width: 26px;
+// }
+
+// .button-icon:hover, .button-icon:focus {
+// 	background-color: $darkpink
+// }
+
+// .button-icon-basket {
+// 	background-image: url(../../img/icons/basket.png);
+// 	background-position: 6px 9px;
+// }
+
+// .button-icon-arrow {
+// 	background-image: url(../../img/arrow.png);
+// 	background-position: 8px 0;
+// }
+
+// .button-icon-arrow-white-right {
+// 	background-position: 8px -491px;
+// }
+
+// .button-icon-pencil {
+// 	background-image: url(../../img/sprites/icon-pencil.png);
+// }
+
+/* form-inline
+----------------------------------------------------------------------------------------*/
+// .form-inline {
+// 	input, textarea, select, #{$button} {
+// 		margin: 0;
+// 	}
+
+// 	.form-item, .form-field, .form-actions {
+// 		margin: 0 1px 0 0;
+// 		float: left;
+// 	}
+
+// 	.form-radio, .form-checkbox {
+// 		margin: 0 10px 0 0;
+//   }
+
+// 	.form-label {
+// 		display: none;
+// 	}
+
+// 	#{$button} {
+// 		min-height: 23px;
+// 		padding: 5px 15px;
+// 	}
+
+// 	.button-icon {
+// 		min-height: 0;
+// 		padding: 0;
+//   }
+// }
+
+/* checkbox | radio
+----------------------------------------------------------------------------------------*/
+// .form-radio, .form-checkbox {
+// 	.form-label {
+// 		float: left;
+// 	}
+
+// 	.form-field {
+// 		& {
+// 			float: left;
+// 			margin: 0 4px 0 0;
+// 		}
+
+// 		input {
+// 			position: relative;
+// 			top: 2px;
+// 			left: 1px;
+// 		}
+// 	}
+// }
+
+// .form-radio-inline, .form-checkbox-inline  {
+// 	.form-item{
+// 		float: left;
+// 	}
+
+// 	.form-item + .form-item {
+// 		padding: 0 0 0 10px;
+// 	}
+// }
