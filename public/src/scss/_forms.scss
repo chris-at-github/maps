@@ -1,9 +1,13 @@
 /* form
 ----------------------------------------------------------------------------------------*/
+form > *:last-child {
+	margin-bottom: 0;
+}
+
 #{$input-text}, textarea {
 	width: 450px;
 	max-width: 100%;
-	padding: 3px 8px;
+	padding: 5px 8px;
 	border: 1px solid $grey-lighter;
 }
 
@@ -17,7 +21,7 @@ select {
 
 #{$input-any} {
 	&:focus {
-		border: 1px solid $grey-darker;
+		border: 1px solid $grey;
 		outline: 0;
 	}
 
