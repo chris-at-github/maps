@@ -18,12 +18,12 @@
 
 				{{Form::open(array('route' => 'map.create'))}}
 					<div class="form-item">
-						<div class="form-label"><label for="map-name">Kartenname:</label></div>
+						<div class="form-label"><label for="map-name">{{{Lang::get('application.global.name')}}}:</label></div>
 						<div class="form-field">{{Form::text('name', null, array('id' => 'map-name'))}}</div>
 					</div>
 
 					<div class="form-actions">
-						<button type="submit" class="button">Speichern</button>
+						<button type="submit" class="button">{{{Lang::get('application.action.save')}}}</button>
 					</div>
 				{{Form::close()}}
 			</div>
