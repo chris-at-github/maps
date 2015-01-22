@@ -16,7 +16,7 @@
 			<div class="container">
 				<header>{{{Lang::get('map.properties.title')}}}</header>
 
-				{{Form::model($world, array('route' => array('world.save', $world->id)))}}
+				{{Form::model($world, array('route' => array('world.store', $world->id)))}}
 					<div class="form-item">
 						<div class="form-label"><label for="world-name">{{{Lang::get('application.global.name')}}}:</label></div>
 						<div class="form-field">{{Form::text('name', null, array('id' => 'world-name'))}}</div>

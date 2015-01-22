@@ -8,8 +8,8 @@ Route::model('world', 'World', function() {
 // Routes for the world controller
 Route::get('/', 'WorldController@index');
 
-Route::any('world/save/{id?}', array(
-	'as'		=> 'world.save',
+Route::any('world/store/{id?}', array(
+	'as'		=> 'world.store',
 	'uses' 	=> 'WorldController@save'
 ));
 
