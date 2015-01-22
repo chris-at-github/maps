@@ -1,5 +1,5 @@
 <?php
-class World extends Eloquent {
+class World extends ApplicationModel {
 
 	/**
 	 * database table name
@@ -7,13 +7,6 @@ class World extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'world';
-
-	/**
-	 * black list for mass assignment
-	 *
-	 * @var array
-	 */
-	protected $guarded = array('id');
 
 	/**
 	 * Variablen die ohne Datenbankspalte in die Datenbank geschrieben werden sollen
@@ -30,13 +23,6 @@ class World extends Eloquent {
 	protected $rules = array(
 		'name'	=> 'required'
 	);
-
-	/**
-	 * errors from the validation result
-	 *
-	 * @var array|boolean
-	 */
-	protected $errors = false;
 
 	/**
 	 * Liefert die Koordinaten wenn toArray oder toJson aufgerufen wird
@@ -78,36 +64,5 @@ class World extends Eloquent {
 		}
 
 		return $tiles;
-	}
-
-	/**
-	 * store an mass assignment array to the model properties. if validator rules are defined, the
-	 * properties will be checked before saving them to database
-	 *
-	 * @param array $properties
-	 * @return boolean
-	 */
-	public function store($properties) {
-		if(empty($this->rules) === false) {
-			$validator = Validator::make($properties, $this->rules);
-
-			if($validator->fails() === true) {
-			  $this->errors = $validator->messages();
-			  return false;
-			}
-		}
-
-		return $this
-			->fill($properties)
-			->save();
-	}
-
-	/**
-	 * return the validation errors
-	 *
-	 * @return \Illuminate\Support\MessageBag
-	 */
-	public function errors() {
-		return $this->errors;
 	}
 }
