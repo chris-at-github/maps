@@ -21,6 +21,10 @@
 						<div class="form-label"><label for="map-name">Kartenname:</label></div>
 						<div class="form-field">{{Form::text('name', null, array('id' => 'map-name'))}}</div>
 					</div>
+
+					<div class="form-actions">
+						<button type="submit" class="button">Speichern</button>
+					</div>
 				{{Form::close()}}
 			</div>
 
