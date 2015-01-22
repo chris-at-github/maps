@@ -3,33 +3,33 @@ namespace App\Controllers;
 
 class WorldController extends ApplicationController {
 
-	public function index(\App\Models\World $world = null)	{
-		if($world === null) {
+	public function index(\App\Models\World\Map $map = null)	{
+		if($map === null) {
 			return \Redirect::route('world.wizard');
 		}
 
 		return \View::make('world.map.index')
-			->with('world', $world)
-			->with('tiles', $world->getTiles());
+			->with('map', $map)
+			->with('tiles', $map->getTiles());
 	}
 
 	public function wizard() {
 	}
 
 	public function store($id = null) {
-		$world 			= new \App\Models\World();
+		$map 				= new \App\Models\World\Map();
 		$arguments	= \Input::all();
 
 		if($id !== null) {
-			$world = \App\Models\World::find($id);
+			$map = \App\Models\World\Map::find($id);
 		}
 
-		if($world->store($arguments) === false) {
+		if($map->store($arguments) === false) {
 			return \Redirect::back()
 				->withInput()
-				->withErrors($world->errors());
+				->withErrors($map->errors());
 		}
 
-		return \Redirect::route('world.index', array('world' => $world->id));
+		return \Redirect::route('world.index', array('map' => $map->id));
 	}
 }

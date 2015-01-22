@@ -1,7 +1,7 @@
 <?php
 
 // Routes to model injection
-Route::model('world', 'App\Models\World', function() {
+Route::model('map', 'App\Models\World\Map', function() {
   return null;
 });
 
@@ -18,7 +18,7 @@ Route::get('world/wizard', array(
 	'uses' 	=> 'App\Controllers\WorldController@wizard'
 ));
 
-Route::get('world/{world}', array(
+Route::get('world/{map}', array(
 	'as'		=> 'world.index',
 	'uses' 	=> 'App\Controllers\WorldController@index'
 ));

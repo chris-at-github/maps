@@ -1,7 +1,7 @@
 <?php
 namespace App\Models\World;
 
-class Maps extends \App\Models\Application {
+class Map extends \App\Models\Application {
 
 	/**
 	 * database table name
@@ -57,7 +57,7 @@ class Maps extends \App\Models\Application {
 
 		for($x = 0; $x < \Config::get('world.map.size.x'); $x++) {
 			for($y = 0; $y < \Config::get('world.map.size.y'); $y++) {
-				$tile = new \App\Models\World\Tile();
+				$tile = new Tile();
 				$tile->x = $x;
 				$tile->y = $y;
 
