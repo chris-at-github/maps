@@ -9,6 +9,13 @@ class World extends Eloquent {
 	protected $table = 'world';
 
 	/**
+	 * black list for mass assignment
+	 *
+	 * @var array
+	 */
+	protected $guarded = array('id');
+
+	/**
 	 * Variablen die ohne Datenbankspalte in die Datenbank geschrieben werden sollen
 	 *
 	 * var array

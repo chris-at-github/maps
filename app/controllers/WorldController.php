@@ -15,11 +15,17 @@ class WorldController extends ApplicationController {
 	public function wizard() {
 	}
 
-	public function save() {
-		$map = new Map();
-		$map->name = Input::get('name');
+	public function save($id = null) {
+		$world = new World();
 
-		$map->save();
-		dd($map->id);
+		if($id !== null) {
+			$world = World::find($id);
+		}
+
+		$world->fill(Input::all());
+
+		if($world->save() === true) {
+			return Redirect::route('world.index', array('world' => $world->id));
+		}
 	}
 }
