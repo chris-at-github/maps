@@ -14,7 +14,7 @@
 		</div>
 		<div class="grid grid-50">
 			<div class="container">
-				<header>{{{Lang::get('map.properties.title')}}}</header>
+				<header>{{{Lang::get('world.properties.title')}}}</header>
 
 				{{Form::model($world, array('route' => array('world.store', $world->id)))}}
 					<div class="form-item">
