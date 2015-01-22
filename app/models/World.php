@@ -1,5 +1,7 @@
 <?php
-class World extends ApplicationModel {
+namespace App\Models;
+
+class World extends Application {
 
 	/**
 	 * database table name
@@ -39,9 +41,9 @@ class World extends ApplicationModel {
 	 * @return array
 	 */
 	public function getSize() {
-		return ArrayHelper::toObject(array(
-			'width'		=> Config::get('world.map.size.x') * Config::get('world.tile.size'),
-			'height'	=> Config::get('world.map.size.y') * Config::get('world.tile.size')
+		return \App\Helpers\ArrayHelper::toObject(array(
+			'width'		=> \Config::get('world.map.size.x') * \Config::get('world.tile.size'),
+			'height'	=> \Config::get('world.map.size.y') * \Config::get('world.tile.size')
 		));
 	}
 
@@ -53,9 +55,9 @@ class World extends ApplicationModel {
 	public function getTiles() {
 		$tiles = array();
 
-		for($x = 0; $x < Config::get('world.map.size.x'); $x++) {
-			for($y = 0; $y < Config::get('world.map.size.y'); $y++) {
-				$tile = new WorldTile();
+		for($x = 0; $x < \Config::get('world.map.size.x'); $x++) {
+			for($y = 0; $y < \Config::get('world.map.size.y'); $y++) {
+				$tile = new \App\Models\World\Tile();
 				$tile->x = $x;
 				$tile->y = $y;
 

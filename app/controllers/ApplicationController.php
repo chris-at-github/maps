@@ -1,6 +1,7 @@
 <?php
+namespace App\Controllers;
 
-class ApplicationController extends Controller {
+class ApplicationController extends \Controller {
 
 	protected $layout = 'layouts.default';
 
@@ -9,12 +10,9 @@ class ApplicationController extends Controller {
 	 *
 	 * @return void
 	 */
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
+	protected function setupLayout() {
+		if($this->layout !== null) {
+			$this->layout = \View::make($this->layout);
 		}
 	}
-
 }

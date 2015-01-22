@@ -1,5 +1,7 @@
 <?php
-class ApplicationModel extends Eloquent {
+namespace App\Models;
+
+class Application extends \Eloquent {
 
 	/**
 	 * black list for mass assignment
@@ -31,7 +33,7 @@ class ApplicationModel extends Eloquent {
 	 */
 	public function store($properties) {
 		if(empty($this->rules) === false) {
-			$validator = Validator::make($properties, $this->rules);
+			$validator = \Validator::make($properties, $this->rules);
 
 			if($validator->fails() === true) {
 			  $this->errors = $validator->messages();

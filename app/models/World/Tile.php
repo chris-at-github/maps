@@ -1,6 +1,7 @@
 <?php
+namespace App\Models\World;
 
-class WorldTile extends Eloquent {
+class Tile extends \App\Models\Application {
 
 	/**
 	 * The database table used by the model.
@@ -38,12 +39,12 @@ class WorldTile extends Eloquent {
 	 * @return array
 	 */
 	public function getCoordinates() {
-		$size 	= Config::get('world.tile.size');
+		$size 	= \Config::get('world.tile.size');
 		$return	= array(
 			'x' =>  $this->x * $size,
 			'y' =>  $this->y * $size
 		);
 
-		return ArrayHelper::toObject($return);
+		return \App\Helpers\ArrayHelper::toObject($return);
 	}
 }
