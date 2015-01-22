@@ -18,9 +18,25 @@ class World extends Eloquent {
 	/**
 	 * Variablen die ohne Datenbankspalte in die Datenbank geschrieben werden sollen
 	 *
-	 * var array
+	 * @var array
 	 */
 	protected $appends = array('size');
+
+	/**
+	 * rules for validation before saving the model
+	 *
+	 * @var array
+	 */
+	protected $rules = array(
+		'name'	=> 'required'
+	);
+
+	/**
+	 * errors from the validation result
+	 *
+	 * @var array|boolean
+	 */
+	protected $errors = false;
 
 	/**
 	 * Liefert die Koordinaten wenn toArray oder toJson aufgerufen wird
@@ -62,5 +78,36 @@ class World extends Eloquent {
 		}
 
 		return $tiles;
+	}
+
+	/**
+	 * store an mass assignment array to the model properties. if validator rules are defined, the
+	 * properties will be checked before saving them to database
+	 *
+	 * @param array $properties
+	 * @return boolean
+	 */
+	public function store($properties) {
+		if(empty($this->rules) === false) {
+			$validator = Validator::make($properties, $this->rules);
+
+			if($validator->fails() === true) {
+			  $this->errors = $validator->messages();
+			  return false;
+			}
+		}
+
+		return $this
+			->fill($properties)
+			->save();
+	}
+
+	/**
+	 * return the validation errors
+	 *
+	 * @return \Illuminate\Support\MessageBag
+	 */
+	public function errors() {
+		return $this->errors;
 	}
 }

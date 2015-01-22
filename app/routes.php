@@ -10,7 +10,7 @@ Route::get('/', 'WorldController@index');
 
 Route::any('world/store/{id?}', array(
 	'as'		=> 'world.store',
-	'uses' 	=> 'WorldController@save'
+	'uses' 	=> 'WorldController@store'
 ));
 
 Route::get('world/wizard', array(

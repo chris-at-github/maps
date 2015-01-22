@@ -15,27 +15,20 @@ class WorldController extends ApplicationController {
 	public function wizard() {
 	}
 
-	public function save($id = null) {
+	public function store($id = null) {
 		$world 			= new World();
 		$arguments	= Input::all();
 
-		$validator = Validator::make($arguments, array(
-			'name'	=> 'required|email'
-		));
-
-		if($validator->fails() === true) {
-		  return Redirect::back()
-		  	->withInput()
-		  	->withErrors($validator->messages());
+		if($id !== null) {
+			$world = World::find($id);
 		}
-		// if($id !== null) {
-		// 	$world = World::find($id);
-		// }
 
-		// $world->fill($arguments);
+		if($world->store($arguments) === false) {
+			return Redirect::back()
+				->withInput()
+				->withErrors($world->errors());
+		}
 
-		// if($world->save() === true) {
-		// 	return Redirect::route('world.index', array('world' => $world->id));
-		// }
+		return Redirect::route('world.index', array('world' => $world->id));
 	}
 }
