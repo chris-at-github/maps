@@ -42,6 +42,33 @@
 ----------------------------------------------------------------------------------------*/
 @import '_forms.scss';
 
+/* Meldungen
+----------------------------------------------------------------------------------------*/
+.message {
+	margin: 0 0 20px;
+	padding: 5px;
+	background: #005da4;
+	color: #fff;
+}
+
+.message-error {
+	background: $red;
+}
+
+.message-notice {
+	background: $blue;
+}
+
+.message {
+	ul:last-child, p:last-child {
+		margin: 0;
+	}
+
+	p {
+		padding: 0 10px;
+	}
+}
+
 /* Listen
 ----------------------------------------------------------------------------------------*/
 .list-inline {

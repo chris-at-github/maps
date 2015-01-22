@@ -16,16 +16,26 @@ class WorldController extends ApplicationController {
 	}
 
 	public function save($id = null) {
-		$world = new World();
+		$world 			= new World();
+		$arguments	= Input::all();
 
-		if($id !== null) {
-			$world = World::find($id);
+		$validator = Validator::make($arguments, array(
+			'name'	=> 'required|email'
+		));
+
+		if($validator->fails() === true) {
+		  return Redirect::back()
+		  	->withInput()
+		  	->withErrors($validator->messages());
 		}
+		// if($id !== null) {
+		// 	$world = World::find($id);
+		// }
 
-		$world->fill(Input::all());
+		// $world->fill($arguments);
 
-		if($world->save() === true) {
-			return Redirect::route('world.index', array('world' => $world->id));
-		}
+		// if($world->save() === true) {
+		// 	return Redirect::route('world.index', array('world' => $world->id));
+		// }
 	}
 }
