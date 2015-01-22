@@ -14,7 +14,7 @@
 		</div>
 		<div class="grid grid-50">
 			<div class="container">
-				<header>Kartenkonfiguration</header>
+				<header>{{{Lang::get('map.properties.title')}}}</header>
 
 				{{Form::open(array('route' => 'map.create'))}}
 					<div class="form-item">
