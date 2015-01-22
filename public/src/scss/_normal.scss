@@ -23,7 +23,7 @@ body {
 	background: #f8f8f8;
 }
 
-input, textarea, select {
+input, textarea, select, button {
 	@include font-default(12px, 1);
 }
 
