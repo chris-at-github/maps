@@ -1,19 +1,26 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+// Routes to model injection
+Route::model('world', 'World', function() {
+  return null;
+});
+
+// Routes for the world controller
 Route::get('/', 'WorldController@index');
-Route::get('map/create', array(
-	'as'		=> 'map.create',
-	'uses' 	=> 'WorldController@create'
+
+Route::get('world/wizard', array(
+	'as'		=> 'world.wizard',
+	'uses' 	=> 'WorldController@wizard'
+));
+
+Route::get('world/{world}', array(
+	'as'		=> 'world.index',
+	'uses' 	=> 'WorldController@index'
+));
+
+Route::post('world/save/{id}', array(
+	'as'		=> 'world.save',
+	'uses' 	=> 'WorldController@save'
 ));
 
 Route::get('tile/{x}/{y}', 'WorldTileController@index');
