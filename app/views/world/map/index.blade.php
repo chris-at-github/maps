@@ -16,13 +16,7 @@
 			<div class="container">
 				<header>{{{Lang::get('world.properties.title')}}}</header>
 
-				@if($errors->any())
-					<ul class="message message-error">
-						@foreach($errors->getMessages() as $error)
-							<li>{{$error[0]}}</li>
-						@endforeach
-					</ul>
-				@endif
+				@include('partials.error', array('errors' => $errors))
 
 				{{Form::model($world, array('route' => array('world.store', $world->id)))}}
 					<div class="form-item">
