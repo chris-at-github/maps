@@ -2,25 +2,25 @@
 
 // Routes to model injection
 Route::model('map', 'App\Models\World\Map', function() {
-  return null;
+  return \App\Models\World\Map::find(1);
 });
 
 // Routes for the world controller
-Route::get('/', 'App\Controllers\WorldController@index');
+Route::get('/{map}', 'App\Controllers\World\MapController@index');
 
 Route::any('world/store/{id?}', array(
 	'as'		=> 'world.store',
-	'uses' 	=> 'App\Controllers\WorldController@store'
+	'uses' 	=> 'App\Controllers\World\MapController@store'
 ));
 
 Route::get('world/wizard', array(
 	'as'		=> 'world.wizard',
-	'uses' 	=> 'App\Controllers\WorldController@wizard'
+	'uses' 	=> 'App\Controllers\World\MapController@wizard'
 ));
 
 Route::get('world/{map}', array(
 	'as'		=> 'world.index',
-	'uses' 	=> 'App\Controllers\WorldController@index'
+	'uses' 	=> 'App\Controllers\World\MapController@index'
 ));
 
 Route::get('tile/{x}/{y}', 'App\Controllers\World\TileController@index');

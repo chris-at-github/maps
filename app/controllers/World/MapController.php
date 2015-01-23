@@ -1,7 +1,7 @@
 <?php
-namespace App\Controllers;
+namespace App\Controllers\World;
 
-class WorldController extends ApplicationController {
+class MapController extends \App\Controllers\ApplicationController {
 
 	public function index(\App\Models\World\Map $map = null)	{
 		if($map === null) {
