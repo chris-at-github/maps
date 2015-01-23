@@ -76,4 +76,44 @@ class Map extends \App\Models\Application {
 
 		return $this->tiles;
 	}
+
+	/**
+	 * save the map data in the database store the object in cache
+	 *
+	 * @param  array $options
+	 * @return boolean
+	 */
+	public function save(array $options = array()) {
+		if($return = parent::save($options) === true) {
+			\Cache::forever($this->getCacheKey(), $this);
+		}
+
+		return $return;
+	}
+
+	/**
+	 * generate an unique key for the cache
+	 *
+	 * @return string
+	 */
+	public function getCacheKey() {
+		return 'world.map.' . $this->id;
+	}
+
+	/**
+	 * load the map from database. if a cache entry exists the map will be load out of the cache
+	 *
+	 * @param mixed $id
+	 * @param array $columns
+	 * @return \App\Models\World\Map
+	 */
+	public static function find($id, $columns = array('*')) {
+		$map = parent::find($id, $columns);
+
+		if($map !== null && \Cache::has($map->getCacheKey()) === true) {
+			$map = \Cache::get($map->getCacheKey());
+		}
+
+		return $map;
+	}
 }
