@@ -27,6 +27,13 @@ class Map extends \App\Models\Application {
 	);
 
 	/**
+	 * collection of generated tiles
+	 *
+	 * @var array
+	 */
+	protected $tiles;
+
+	/**
 	 * Liefert die Koordinaten wenn toArray oder toJson aufgerufen wird
 	 *
 	 * @return array
@@ -53,18 +60,20 @@ class Map extends \App\Models\Application {
 	 * @return array
 	 */
 	public function getTiles() {
-		$tiles = array();
+		if(isset($this->tiles) === false) {
+			$this->tiles = array();
 
-		for($x = 0; $x < \Config::get('world.map.size.x'); $x++) {
-			for($y = 0; $y < \Config::get('world.map.size.y'); $y++) {
-				$tile = new Tile();
-				$tile->x = $x;
-				$tile->y = $y;
+			for($x = 0; $x < \Config::get('world.map.size.x'); $x++) {
+				for($y = 0; $y < \Config::get('world.map.size.y'); $y++) {
+					$tile = new Tile();
+					$tile->x = $x;
+					$tile->y = $y;
 
-				$tiles[] = $tile;
+					$this->tiles[] = $tile;
+				}
 			}
 		}
 
-		return $tiles;
+		return $this->tiles;
 	}
 }
