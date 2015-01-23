@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container container-grey">
 	<ul class="list-roadmap">
 		<li>
 			<header>Version 0.1</header>
