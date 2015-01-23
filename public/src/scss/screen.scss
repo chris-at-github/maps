@@ -108,6 +108,16 @@
 		height: 3px;
 		background: $grey;
 	}
+
+	.done {
+		& {
+			color: $grey-lighter;
+		}
+
+		&:before {
+			background: $grey-lighter;
+		}
+	}
 }
 
 /* Container
