@@ -2,7 +2,7 @@
 
 // Routes to model injection
 Route::model('map', 'App\Models\World\Map', function() {
-  return \App\Models\World\Map::find(1);
+	return null;
 });
 
 // Routes for the world controller
