@@ -94,6 +94,7 @@ select {
 
 	&:hover, &:focus, &:active {
 		background-color: $grey-lighter;
+		color: $black;
 		text-decoration: none;
 	}
 }
