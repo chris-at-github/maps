@@ -19,10 +19,7 @@
 				@include('partials.error', array('errors' => $errors))
 
 				{{Form::model($map, array('route' => array('world.store', $map->id)))}}
-					<div class="form-item">
-						<div class="form-label"><label for="world-name">{{{Lang::get('application.global.name')}}}:</label></div>
-						<div class="form-field">{{Form::text('name', null, array('id' => 'world-name'))}}</div>
-					</div>
+					@include('partials.world.map.fields', array('map' => $map))
 
 					<div class="form-actions">
 						<button type="submit" class="button">{{{Lang::get('application.action.save')}}}</button>
