@@ -23,4 +23,4 @@ Route::get('world/{map}', array(
 	'uses' 	=> 'App\Controllers\World\MapController@index'
 ));
 
-Route::get('tile/{x}/{y}', 'App\Controllers\World\TileController@index');
+Route::get('world/tile/{x}/{y}', 'App\Controllers\World\TileController@index');
