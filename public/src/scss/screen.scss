@@ -81,6 +81,18 @@
 	}
 }
 
+.list-container {
+	& > li {
+		padding: 10px 0;
+		border-top: 1px solid $grey-light;
+	}
+
+	& > li:first-child {
+		padding: 0 0 10px 0;
+		border: 0;
+	}
+}
+
 .list-roadmap {
 	& {
 		font-size: 12px;
