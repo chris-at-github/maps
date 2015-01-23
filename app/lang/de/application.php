@@ -5,6 +5,7 @@ return array(
 		'name'	=> 'Name'
 	),
 	'action'	=> array(
-		'save'	=> 'Speichern'
+		'save'	=> 'Speichern',
+		'load'	=> 'Laden',
 	)
 );

@@ -14,6 +14,8 @@ class MapController extends \App\Controllers\ApplicationController {
 	}
 
 	public function wizard() {
+		return \View::make('world.map.wizard')
+			->with('maps', \App\Models\World\Map::all());
 	}
 
 	public function store($id = null) {
