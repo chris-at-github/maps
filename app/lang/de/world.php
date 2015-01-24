@@ -2,7 +2,9 @@
 
 return array(
 	'properties'	=> array(
-		'title'	=> 'Kartenkonfiguration'
+		'title'	=> 'Kartenkonfiguration',
+		'x'			=> 'X',
+		'y'			=> 'Y'
 	),
 	'index'	=> array(
 		'title'	=> 'vorhandene Karten'

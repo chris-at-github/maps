@@ -27,6 +27,20 @@ class Map extends \App\Models\Application {
 	);
 
 	/**
+	 * number of tiles in x path
+	 *
+	 * @var int
+	 */
+	protected $x = 0;
+
+	/**
+	 * number of tiles in y path
+	 *
+	 * @var int
+	 */
+	protected $y = 0;
+
+	/**
 	 * collection of generated tiles
 	 *
 	 * @var array
@@ -43,15 +57,72 @@ class Map extends \App\Models\Application {
 	}
 
 	/**
+	 * returns the x coordinate
+	 *
+	 * @return int
+	 */
+	public function getXAttribute() {
+		return (int) $this->x;
+	}
+
+	/**
+	 * set the x coordinate
+	 *
+	 * @param mixed value of x
+	 * @return void
+	 */
+	public function setXAttribute($x) {
+		$this->x = $x;
+	}
+
+	/**
+	 * returns the y coordinate
+	 *
+	 * @return int
+	 */
+	public function getYAttribute() {
+		return (int) $this->y;
+	}
+
+	/**
+	 * set the y coordinate
+	 *
+	 * @param mixed value of y
+	 * @return void
+	 */
+	public function setYAttribute($y) {
+		$this->y = $y;
+	}
+
+	/**
 	 * Calculate the size of the map in pixels
 	 *
 	 * @return array
 	 */
 	public function getSize() {
 		return \App\Helpers\ArrayHelper::toObject(array(
-			'width'		=> \Config::get('world.map.size.x') * \Config::get('world.tile.size'),
-			'height'	=> \Config::get('world.map.size.y') * \Config::get('world.tile.size')
+			'width'		=> $this->x * \Config::get('world.tile.size'),
+			'height'	=> $this->y * \Config::get('world.tile.size')
 		));
+	}
+
+	/**
+	 * generate and fill the tiles array
+	 *
+	 * @return void
+	 */
+	public function generateTiles() {
+		if(empty($this->tiles) === true) {
+			for($x = 0; $x < $this->x; $x++) {
+				for($y = 0; $y < $this->y; $y++) {
+					$tile = new Tile();
+					$tile->x = $x;
+					$tile->y = $y;
+
+					$this->tiles[] = $tile;
+				}
+			}
+		}
 	}
 
 	/**
@@ -60,18 +131,8 @@ class Map extends \App\Models\Application {
 	 * @return array
 	 */
 	public function getTiles() {
-		if(isset($this->tiles) === false) {
-			$this->tiles = array();
-
-			for($x = 0; $x < \Config::get('world.map.size.x'); $x++) {
-				for($y = 0; $y < \Config::get('world.map.size.y'); $y++) {
-					$tile = new Tile();
-					$tile->x = $x;
-					$tile->y = $y;
-
-					$this->tiles[] = $tile;
-				}
-			}
+		if(empty($this->tiles) === true) {
+			$this->generateTiles();
 		}
 
 		return $this->tiles;

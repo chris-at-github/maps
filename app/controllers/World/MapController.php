@@ -26,6 +26,12 @@ class MapController extends \App\Controllers\ApplicationController {
 			$map = \App\Models\World\Map::find($id);
 		}
 
+		if(empty($arguments['x']) === false || empty($arguments['y']) === false) {
+			$map->x = $arguments['x'];
+			$map->y = $arguments['y'];
+			$map->generateTiles();
+		}
+
 		if($map->store($arguments) === false) {
 			return \Redirect::back()
 				->withInput()
