@@ -24,7 +24,7 @@
 				<li class="done">Laden der Karte aus dem Cache</li>
 				<li class="done">Weiterleitung auf den Wizard ohne Map -> Auswahl bestehender Karten oder Anlegen einer Neuen</li>
 				<li class="done">Auslagerung der Kartenkonfiguration in ein Partial und dann Einbau in der Wizard</li>
-				<li>Erzeugen der Karte an Hand der X,Y Eingabe; Default aus Config</li>
+				<li class="done">Erzeugen der Karte an Hand der X,Y Eingabe; Default aus Config</li>
 				<li>Laden der Karte anhand der Session</li>
 				<li>X,Y Feld darf nicht bearbeitet werden -> disabled</li>
 			</ul>
