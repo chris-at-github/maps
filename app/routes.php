@@ -6,7 +6,7 @@ Route::model('map', 'App\Models\World\Map', function() {
 });
 
 // Routes for the world controller
-Route::get('/{map}', 'App\Controllers\World\MapController@index');
+Route::get('/', 'App\Controllers\World\MapController@wizard');
 
 Route::any('world/store/{id?}', array(
 	'as'		=> 'world.store',
