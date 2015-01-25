@@ -6,6 +6,10 @@ class MapController extends \App\Controllers\ApplicationController {
 	public function index(\App\Models\World\Map $map = null)	{
 		if($map === null) {
 			return \Redirect::route('world.wizard');
+		} else {
+
+			// save id of current map for later request without map parameter
+			\Session::put('world.map', $map->id);
 		}
 
 		return \View::make('world.map.index')
