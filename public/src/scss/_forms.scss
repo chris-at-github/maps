@@ -29,6 +29,11 @@ select {
 		border: 1px solid $red;
 		color: $white;
 	}
+
+	&.disabled {
+		background: $grey-light;
+		border-color: $grey-lighter;
+	}
 }
 
 .form-item {
