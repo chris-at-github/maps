@@ -173,6 +173,10 @@ class Map extends \App\Models\Application {
 
 		if($map !== null && \Cache::has($map->getCacheKey()) === true) {
 			$map = \Cache::get($map->getCacheKey());
+
+		} else {
+			throw new \App\Exceptions\World\Map('map not valid');
+			dd('not found');
 		}
 
 		return $map;
