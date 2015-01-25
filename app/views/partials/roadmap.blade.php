@@ -27,6 +27,7 @@
 				<li class="done">Erzeugen der Karte an Hand der X,Y Eingabe; Default aus Config</li>
 				<li>Laden der Karte anhand der Session</li>
 				<li>X,Y Feld darf nicht bearbeitet werden -> disabled</li>
+				<li>Kann eine Karte nicht geladen werden (nicht im Cache) -> werfe eine eigene Exeption und werte diese aus -> Umleitung auf Wizard mit Fehlermeldung</li>
 			</ul>
 		</li>
 	</ul>
