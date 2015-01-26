@@ -17,7 +17,7 @@
 				<li>Zuweisung der Tile Typen zu einzelnen Tiles einer Karte und Speicherung der Information</li>
 			</ul>
 		</li>
-		<li>
+		<li class="done">
 			<header>Version 0.1.0</header>
 			<ul>
 				<li class="done">Erstellung Karte über PHP und Speicherung der Daten im Cache</li>
@@ -25,9 +25,8 @@
 				<li class="done">Weiterleitung auf den Wizard ohne Map -> Auswahl bestehender Karten oder Anlegen einer Neuen</li>
 				<li class="done">Auslagerung der Kartenkonfiguration in ein Partial und dann Einbau in der Wizard</li>
 				<li class="done">Erzeugen der Karte an Hand der X,Y Eingabe; Default aus Config</li>
-				<li>Laden der Karte anhand der Session</li>
 				<li class="done">X,Y Feld darf nicht bearbeitet werden -> disabled</li>
-				<li>Kann eine Karte nicht geladen werden (nicht im Cache) -> werfe eine eigene Exeption und werte diese aus -> Umleitung auf Wizard mit Fehlermeldung</li>
+				<li class="done">Kann eine Karte nicht geladen werden (nicht im Cache) -> werfe eine eigene Exeption und werte diese aus -> Umleitung auf Wizard mit Fehlermeldung</li>
 			</ul>
 		</li>
 	</ul>
