@@ -54,6 +54,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(\App\Exceptions\World\Map $exception) {
+  return Redirect::route('world.wizard')->with('error', Lang::get('world.exception.' . $exception->getCode(), array('name' => $exception->getArgument()->name)));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

@@ -1,5 +1,9 @@
 @include('layouts.header')
 
+	@if(isset($error) === true)
+		<div class="message message-error">{{{$error}}}</div>
+	@endif
+
 	<div class="fluid-grid">
 		<div class="grid grid-50">
 			<div class="container">

@@ -4,9 +4,16 @@ namespace App\Exceptions\World;
 class Map extends \App\Exceptions\Application {
 
 	/**
-	 * map object that throw the error
+	 * map not found
 	 *
-	 * @var \App\Models\World\Map
+	 * @var const int
 	 */
-	protected $map;
+	const NOT_FOUND = 1;
+
+	/**
+	 * map not valid
+	 *
+	 * @var const int
+	 */
+	const NOT_VALID = 2;
 }
