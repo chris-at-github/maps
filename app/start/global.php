@@ -55,7 +55,13 @@ App::error(function(Exception $exception, $code)
 });
 
 App::error(function(\App\Exceptions\World\Map $exception) {
-  return Redirect::route('world.wizard')->with('error', Lang::get('world.exception.' . $exception->getCode(), array('name' => $exception->getArgument()->name)));
+	$message = Lang::get('world.exception.anonymous.' . $exception->getCode());
+
+	if($exception->getArgument() instanceof \App\Exceptions\World\Map) {
+		$message = Lang::get('world.exception.named.' . $exception->getCode(), array('name' => $exception->getArgument()->name));
+	}
+
+  return Redirect::route('world.wizard')->with('error', $message);
 });
 
 /*

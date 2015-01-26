@@ -2,7 +2,7 @@
 
 // Routes to model injection
 Route::model('map', 'App\Models\World\Map', function() {
-	return null;
+	throw new \App\Exceptions\World\Map(null, \App\Exceptions\World\Map::NOT_FOUND);
 });
 
 // Routes for the world controller
