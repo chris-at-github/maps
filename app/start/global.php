@@ -57,7 +57,7 @@ App::error(function(Exception $exception, $code)
 App::error(function(\App\Exceptions\World\Map $exception) {
 	$message = Lang::get('world.exception.anonymous.' . $exception->getCode());
 
-	if($exception->getArgument() instanceof \App\Exceptions\World\Map) {
+	if($exception->getArgument() instanceof \App\Models\World\Map) {
 		$message = Lang::get('world.exception.named.' . $exception->getCode(), array('name' => $exception->getArgument()->name));
 	}
 
