@@ -4,11 +4,9 @@ namespace App\Controllers\World;
 class MapController extends \App\Controllers\ApplicationController {
 
 	public function index(\App\Models\World\Map $map = null)	{
-		if($map === null) {
-			return \Redirect::route('world.wizard');
-		} else {
 
-			// save id of current map for later request without map parameter
+		// save id of current map for later request without map parameter
+		if($map !== null) {
 			\Session::put('world.map', $map->id);
 		}
 

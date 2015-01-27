@@ -18,9 +18,16 @@ Route::get('world/wizard', array(
 	'uses' 	=> 'App\Controllers\World\MapController@wizard'
 ));
 
-Route::get('world/{map}', array(
-	'as'		=> 'world.index',
-	'uses' 	=> 'App\Controllers\World\MapController@index'
-));
+Route::get('world/{map?}', array('as' => 'world.index', function($map = null) {
+	if($map === null && \Session::get('world.map') !== null) {
+		$map = \App\Models\World\Map::find(\Session::get('world.map'));
+	}
+
+	if($map === null) {
+		return App::make('App\Controllers\World\MapController')->wizard();
+	}
+
+	return App::make('App\Controllers\World\MapController')->index($map);
+}));
 
 Route::get('world/tile/{x}/{y}', 'App\Controllers\World\TileController@index');
