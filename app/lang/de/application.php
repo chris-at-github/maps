@@ -7,5 +7,9 @@ return array(
 	'action'	=> array(
 		'save'	=> 'Speichern',
 		'load'	=> 'Laden',
-	)
+	),
+	'menu'		=> array(
+		'world' 	=> 'World',
+		'manager'	=> 'Manager',
+	),
 );

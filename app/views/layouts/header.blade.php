@@ -13,10 +13,12 @@
 
 	<div id="page">
 		<div id="header">
-			<ul id="menu-main" class="list-inline">
-				<li><a href="#world">World</a></li>
-				<li><a href="#colony">Colony</a></li>
-			</ul>
+			<div id="menu-main">
+				<ul class="list-inline">
+					<li><a href="/world/">World</a></li>
+					<li><a href="/manager/">Manager</a></li>
+				</ul>
+			</div>
 		</div>
 
 		<div id="body">
