@@ -71,4 +71,13 @@ class Plugin extends Application {
 
 		return null;
 	}
+
+	/**
+	 * Alias for getByType(TILES)
+	 *
+	 * @return array
+	 */
+	public function getTilesAttribute() {
+		return $this->getByType(self::TYPE_TILES);
+	}
 }

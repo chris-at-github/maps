@@ -12,6 +12,7 @@
 			<ul>
 				<li class="done">Einbau Menü mit Punkten World | Plugins</li>
 				<li class="done">Einbau PluginController</li>
+				<li>Installationsprozess von Plugins</li>
 				<li>Aufbau Plugin Struktur + Tile Plugins</li>
 				<li>Erstellung zweier Tiles -> green, blue</li>
 				<li>Zuweisung der Tile Typen zu einzelnen Tiles einer Karte und Speicherung der Information</li>
