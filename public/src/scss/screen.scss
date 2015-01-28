@@ -184,7 +184,13 @@
 	}
 
 	li:first-child {
-		margin: 0;
+		& {
+			margin: 0;
+		}
+
+		a:before {
+			display: none;
+		}
 	}
 
 	a {
@@ -200,11 +206,11 @@
 		text-decoration: none;
 	}
 
-	a:after {
+	a:before {
 		content: '';
 		height: 13px;
 		display: inline-block;
-		margin: 0 0 0 15px;
+		margin: 0 15px 0 0;
 		border-right: 1px solid $grey-lighter;
 		vertical-align: middle;
 	}
