@@ -162,22 +162,50 @@
 #page {
 	width: 980px;
 	max-width: 100%;
-	padding: 15px;
 }
 
 #header {
 	margin: 0 0 10px 0;
+	padding: 5px 15px;
+	border-bottom: 1px solid $grey-lighter;
+	background: $white;
+}
+
+#body {
+	padding: 15px;
 }
 
 /* Menu Main
 ----------------------------------------------------------------------------------------*/
 #menu-main {
 	li {
-		margin: 0 0 0 10px;
+		margin: 0 0 0 15px;
 	}
 
 	li:first-child {
 		margin: 0;
+	}
+
+	a {
+		display: block;
+		text-transform: uppercase;
+		font-weight: 500;
+		color: $grey-darker;
+		line-height: 35px;
+	}
+
+	a:hover, a:focus, a:active {
+		color: $blue;
+		text-decoration: none;
+	}
+
+	a:after {
+		content: '';
+		height: 13px;
+		display: inline-block;
+		margin: 0 0 0 15px;
+		border-right: 1px solid $grey-lighter;
+		vertical-align: middle;
 	}
 }
 
