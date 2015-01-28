@@ -49,11 +49,11 @@ Tile.prototype.render = function() {
 }
 
 Tile.prototype.on = function() {
-	this.container.addClass('on');
+	this.container.addClass('focus');
 }
 
 Tile.prototype.off = function() {
-	this.container.removeClass('on');
+	this.container.removeClass('focus');
 }
 
 Tile.prototype.activate = function(e) {
@@ -61,6 +61,8 @@ Tile.prototype.activate = function(e) {
 	var container = require('./DataContainer.js');
 	var data 			= new container($('.data-container'));
 			data.load(url);
+
+	this.container.addClass('on');
 }
 
 module.exports = Tile;
