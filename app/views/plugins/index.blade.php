@@ -1,7 +1,7 @@
 @include('layouts.header')
 
 	<div class="fluid-grid">
-		<div class="grid grid-33">
+		<div class="grid grid-50">
 
 			@if(empty($plugin->tiles) === false)
 				<div class="container">
