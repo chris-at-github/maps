@@ -10,6 +10,6 @@ return array(
 	),
 	'navigation' => array(
 		'world' 	=> 'World',
-		'plugins'	=> 'Plugins Manager',
+		'plugins'	=> 'Plugin Manager',
 	),
 );
