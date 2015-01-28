@@ -15,8 +15,8 @@
 		<div id="header">
 			<div id="menu-main">
 				<ul class="list-inline">
-					<li><a href="/world/">World</a></li>
-					<li><a href="/manager/">Manager</a></li>
+					<li><a href="{{route('world.index')}}">{{Lang::get('application.navigation.world')}}</a></li>
+					<li><a href="{{route('plugins.index')}}">{{Lang::get('application.navigation.plugins')}}</a></li>
 				</ul>
 			</div>
 		</div>

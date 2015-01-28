@@ -8,8 +8,8 @@ return array(
 		'save'	=> 'Speichern',
 		'load'	=> 'Laden',
 	),
-	'menu'		=> array(
+	'navigation' => array(
 		'world' 	=> 'World',
-		'manager'	=> 'Manager',
+		'plugins'	=> 'Plugins Manager',
 	),
 );
