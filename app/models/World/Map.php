@@ -112,7 +112,7 @@ class Map extends \App\Models\Application {
 	 * @return void
 	 */
 	public function generateTiles() {
-		if(empty($this->tiles) === true) {
+		// if(empty($this->tiles) === true) {
 			for($x = 0; $x < $this->x; $x++) {
 				for($y = 0; $y < $this->y; $y++) {
 					$tile = new Tile();
@@ -122,7 +122,7 @@ class Map extends \App\Models\Application {
 					$this->tiles[] = $tile;
 				}
 			}
-		}
+		// }
 	}
 
 	/**

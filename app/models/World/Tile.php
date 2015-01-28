@@ -25,6 +25,13 @@ class Tile extends \App\Models\Application {
 	protected $guarded = array();
 
 	/**
+	 * plugin of this tile
+	 *
+	 * @var \App\Plugins\TileBootstrap
+	 */
+	protected $plugin;
+
+	/**
 	 * Liefert die Koordinaten wenn toArray oder toJson aufgerufen wird
 	 *
 	 * @return array
@@ -46,5 +53,31 @@ class Tile extends \App\Models\Application {
 		);
 
 		return \App\Helpers\ArrayHelper::toObject($return);
+	}
+
+	/**
+	 * return the html code for this tile
+	 *
+	 * @return string
+	 */
+	public function render() {
+		return $this->getPluginInstance()->render();
+	}
+
+	/**
+	 * return the assigned tile plugin for this tile
+	 *
+	 * @return \App\Plugins\TileBootstrap
+	 */
+	protected function getPluginInstance() {
+		if(isset($this->plugin) === false) {
+			$this->plugin = with(new \App\Models\Plugin())->load('Tiles/TileGreen');
+			$this->plugin->fill(array(
+				'x'	=> $this->x,
+				'y'	=> $this->y
+			));
+		}
+
+		return $this->plugin;
 	}
 }
