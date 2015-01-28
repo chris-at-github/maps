@@ -13,7 +13,7 @@
 	& {
 		position: absolute;
 		top: 0; left: 0;
-		border: 1px solid $grey-light;
+		border: 1px solid $white;
 	}
 
 	.tile {
@@ -23,13 +23,17 @@
 			height: 45px;
 			margin: -1px 0 0 -1px;
 			background: $white;
-			border: 1px solid $grey-light;
+			border: 1px solid rgba(255, 255, 255, 0.3);
 			z-index: 5;
 		}
 
 		&.on {
-			border-color: $blue;
+			border-color: rgba(255, 255, 255, 0.7);
 			z-index: 10;
 		}
+	}
+
+	.tile-green {
+		background: #78c843;
 	}
 }
