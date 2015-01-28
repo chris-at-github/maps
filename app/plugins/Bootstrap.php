@@ -1,7 +1,7 @@
 <?php
 namespace App\Plugins;
 
-class Bootstrap {
+class Bootstrap extends \Eloquent {
 
 	/**
 	 * name of plugin
