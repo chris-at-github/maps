@@ -1,4 +1,10 @@
 <?php
-class TileGreen_PluginBootstrap extends \App\Plugins\Bootstrap {
-	public $name = 'TileGreen';
+class TileGreenBootstrap extends \App\Plugins\TileBootstrap {
+
+	/**
+	 * name of plugin
+	 *
+	 * @var string $name
+	 */
+	 protected $name = 'TileGreen';
 }

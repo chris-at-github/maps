@@ -19,7 +19,7 @@ class Plugin extends Application {
 	 * @param string $type
 	 * @return string
 	 */
-	public function getPluginDirectory($type = null) {
+	public function getDirectory($type = null) {
 		$directory = app_path() . DIRECTORY_SEPARATOR . \Config::get('plugins.directory');
 
 		if($type !== null) {
@@ -35,21 +35,40 @@ class Plugin extends Application {
 	 * @param string $type
 	 * @return array
 	 */
-	public function getPluginsFormDirectory($type) {
+	public function getByType($type) {
+		$plugins 			= array();
 		$filesystem 	= new Filesystem();
-		$directories 	= $filesystem->directories($this->getPluginDirectory($type));
+		$directories 	= $filesystem->directories($this->getDirectory($type));
 
 		foreach($directories as $directory) {
-			$name 			= $filesystem->name($directory);
-			$bootstrap	= sprintf(\Config::get('plugins.bootstrap'), $name);
+			$namespace 	= ucfirst($type) . '\\' . $filesystem->name($directory);
+			$plugin 		= $this->load($namespace);
 
-			if($filesystem->exists($directory . DIRECTORY_SEPARATOR . 'Bootstrap.php') === true) {
-				$filesystem->requireOnce($directory . DIRECTORY_SEPARATOR . 'Bootstrap.php');
-
-				$plugin = new $bootstrap();
-
-				dd($plugin);
+			if($plugin !== null) {
+				$plugins[] = $plugin;
 			}
 		}
+
+		return $plugins;
+	}
+
+	/**
+	 * load a plugin from the directory and create an instance
+	 *
+	 * @param string $namespace
+	 * @return \App\Plugins\Bootstrap
+	 */
+	public function load($namespace) {
+		$filesystem = new Filesystem();
+		$directory 	= $this->getDirectory() . DIRECTORY_SEPARATOR . $namespace;
+		$bootstrap	= sprintf(\Config::get('plugins.bootstrap'), $filesystem->name($directory));
+
+		if($filesystem->exists($directory . DIRECTORY_SEPARATOR . 'Bootstrap.php') === true) {
+			$filesystem->requireOnce($directory . DIRECTORY_SEPARATOR . 'Bootstrap.php');
+
+			return new $bootstrap();
+		}
+
+		return null;
 	}
 }
