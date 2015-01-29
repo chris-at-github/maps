@@ -7,8 +7,6 @@
 					<div class="tile-container" style="width: {{$map->size->width}}px; height: {{$map->size->height}}px;">
 						@foreach($tiles as $tile)
 							{{$tile->render()}}
-							<!--<div class="tile" data-x="{{$tile->x}}" data-y="{{$tile->y}}" style="top: {{$tile->coordinates->y}}px; left: {{$tile->coordinates->x}}px;"></div>-->
-
 						@endforeach
 					</div>
 				</div>
