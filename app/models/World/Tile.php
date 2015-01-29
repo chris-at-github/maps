@@ -18,7 +18,7 @@ class Tile extends \App\Models\Application {
 	protected $guarded = array();
 
 	/**
-	 * plugin of this tile
+	 * instance to tile plugin
 	 *
 	 * @var \App\Plugins\TileBootstrap
 	 */
