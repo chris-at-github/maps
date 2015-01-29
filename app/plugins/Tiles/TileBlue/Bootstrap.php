@@ -2,9 +2,11 @@
 class TileBlueBootstrap extends \App\Plugins\TileBootstrap {
 
 	/**
-	 * name of plugin
+	 * returns the name of the plugin
 	 *
-	 * @var string $name
+	 * @return string
 	 */
-	 protected $name = 'TileBlue';
+	public function getName() {
+		return 'TileBlue';
+	}
 }

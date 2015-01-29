@@ -7,4 +7,8 @@ class PluginController extends \App\Controllers\ApplicationController {
 		return \View::make('plugins.index')
 			->with('plugin', new \App\Models\Plugin());
 	}
+
+	public function install($namespace)	{
+		dd($namespace);
+	}
 }

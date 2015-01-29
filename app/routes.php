@@ -37,6 +37,11 @@ Route::get('world/tile/{x}/{y}', 'App\Controllers\World\TileController@index');
 // Routes for plugin controllers
 // -------------------------------------------------------------------------------
 Route::get('plugins/', array(
-	'as'		=> 'plugins.index',
+	'as'		=> 'plugin.index',
 	'uses' 	=> 'App\Controllers\Plugins\PluginController@index'
+));
+
+Route::get('plugins/install/{namespace}', array(
+	'as'		=> 'plugin.install',
+	'uses' 	=> 'App\Controllers\Plugins\PluginController@install'
 ));

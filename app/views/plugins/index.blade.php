@@ -10,7 +10,15 @@
 					<ul class="list-container">
 						@foreach($plugin->tiles as $tile)
 							<li>
-								<header>{{{$tile->getName()}}}</header>
+								<header>{{{$tile->name}}}</header>
+
+								<div class="align-right">
+									@if($tile->installed === true)
+
+									@else
+										<a href="{{route('plugin.install', ['namespace' => 'Tiles\TileGreen'])}}" class="button">{{{Lang::get('application.actions.install')}}}</a>
+									@endif
+								</div>
 							</li>
 						@endforeach
 					</ul>

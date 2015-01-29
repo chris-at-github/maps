@@ -6,6 +6,13 @@ use \Illuminate\Filesystem\Filesystem;
 class Plugin extends Application {
 
 	/**
+	 * database table name
+	 *
+	 * @var string
+	 */
+	protected $table = 'plugin';
+
+	/**
 	 * const plugin type tiles
 	 *
 	 * @var const string

@@ -16,7 +16,7 @@
 			<div id="menu-main">
 				<ul class="list-inline">
 					<li><a href="{{route('world.index')}}">{{Lang::get('application.navigation.world')}}</a></li>
-					<li><a href="{{route('plugins.index')}}">{{Lang::get('application.navigation.plugins')}}</a></li>
+					<li><a href="{{route('plugin.index')}}">{{Lang::get('application.navigation.plugins')}}</a></li>
 				</ul>
 			</div>
 		</div>
