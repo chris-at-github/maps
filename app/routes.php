@@ -41,7 +41,7 @@ Route::get('plugins/', array(
 	'uses' 	=> 'App\Controllers\Plugins\PluginController@index'
 ));
 
-Route::get('plugins/install/{namespace}', array(
+Route::get('plugins/install/{key}', array(
 	'as'		=> 'plugin.install',
 	'uses' 	=> 'App\Controllers\Plugins\PluginController@install'
 ));

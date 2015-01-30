@@ -8,7 +8,7 @@ class PluginController extends \App\Controllers\ApplicationController {
 			->with('plugin', new \App\Models\Plugin());
 	}
 
-	public function install($namespace)	{
-		dd($namespace);
+	public function install($key)	{
+		dd($key);
 	}
 }
