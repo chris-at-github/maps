@@ -92,3 +92,21 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| App Events
+|--------------------------------------------------------------------------
+|
+| Check if a notice or error flash message exist
+|
+*/
+App::before(function($request) {
+  if(\Session::has('notice') === true) {
+  	View::share('notice', \Session::get('notice'));
+  }
+
+  if(\Session::has('error') === true) {
+  	View::share('error', \Session::get('error'));
+  }
+});

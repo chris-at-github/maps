@@ -1,4 +1,5 @@
 @include('layouts.header')
+	@include('partials.message')
 
 	<div class="fluid-grid">
 		<div class="grid grid-50">
