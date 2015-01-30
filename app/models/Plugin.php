@@ -37,27 +37,29 @@ class Plugin extends Application {
 	}
 
 	/**
-	 * read all plugins that stored in plugin directory form on type
+	 * read all plugins that stored in plugin directory
 	 *
-	 * @param string $type
+	 * @param array $options
 	 * @return array
 	 */
-	public function getByType($type) {
-		$plugins 			= array();
+	public function collect($options = array()) {
+		$plugins 			= new \Illuminate\Support\Collection();
 		$filesystem 	= new Filesystem();
-		$directories 	= $filesystem->directories($this->getDirectory($type));
+		$directories 	= $filesystem->directories($this->getDirectory($options['type']));
 
 		foreach($directories as $directory) {
-			$namespace 	= ucfirst($type) . '\\' . $filesystem->name($directory);
+			$namespace 	= ucfirst($options['type']) . '\\' . $filesystem->name($directory);
 			$plugin 		= $this->load($namespace);
 
 			if($plugin !== null) {
-				$plugins[] = $plugin;
+				$plugins->put(\App\Helpers\PluginHelper::key($namespace), $plugin);
 			}
 		}
 
 		return $plugins;
 	}
+
+
 
 	/**
 	 * load a plugin from the directory and create an instance
@@ -85,6 +87,8 @@ class Plugin extends Application {
 	 * @return array
 	 */
 	public function getTilesAttribute() {
-		return $this->getByType(self::TYPE_TILES);
+		return $this->collect(array(
+			'type' => self::TYPE_TILES
+		));
 	}
 }
