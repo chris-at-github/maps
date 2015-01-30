@@ -1,7 +1,7 @@
 <?php
 namespace App\Helpers;
 
-class ArrayHelper {
+class Arr {
 	public static function toObject($array) {
 		return (object) $array;
 	}

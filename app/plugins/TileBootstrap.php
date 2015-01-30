@@ -76,7 +76,7 @@ class TileBootstrap extends Bootstrap {
 			'y' =>  $this->y * $size
 		);
 
-		return \App\Helpers\ArrayHelper::toObject($return);
+		return \App\Helpers\Arr::toObject($return);
 	}
 
 	/**

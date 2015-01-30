@@ -100,7 +100,7 @@ class Map extends \App\Models\Application {
 	 * @return array
 	 */
 	public function getSize() {
-		return \App\Helpers\ArrayHelper::toObject(array(
+		return \App\Helpers\Arr::toObject(array(
 			'width'		=> $this->x * \Config::get('world.tile.size'),
 			'height'	=> $this->y * \Config::get('world.tile.size')
 		));
