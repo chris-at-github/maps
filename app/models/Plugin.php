@@ -42,7 +42,19 @@ class Plugin extends Application {
 		return $plugins;
 	}
 
+	/**
+	 * read one plugin and return an instance to the bootstrap class
+	 *
+	 * @param array $options
+	 * @return \App\Plugins\Bootstrap
+	 */
+	public function one($options = array()) {
+		$plugins = $this->collect($options);
 
+		if(isset($options['key']) === true) {
+
+		}
+	}
 
 	/**
 	 * load a plugin from the directory and create an instance

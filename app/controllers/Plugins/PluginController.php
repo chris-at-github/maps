@@ -9,6 +9,9 @@ class PluginController extends \App\Controllers\ApplicationController {
 	}
 
 	public function install($key)	{
-		dd($key);
+		$plugin = with(new \App\Models\Plugin())->one(array(
+			'key'		=> $key,
+			'type'	=> \App\Models\Plugin::TYPE_TILES
+		));
 	}
 }
