@@ -31,7 +31,7 @@ class Plugin extends Application {
 		$directories 	= $filesystem->directories(\App\Helpers\Plugin::directory($options['type']));
 
 		foreach($directories as $directory) {
-			$namespace 	= ucfirst($options['type']) . '\\' . $filesystem->name($directory);
+			$namespace	= ucfirst($options['type']) . '\\' . $filesystem->name($directory);
 			$plugin 		= $this->load($namespace);
 
 			if($plugin !== null) {
@@ -51,9 +51,11 @@ class Plugin extends Application {
 	public function one($options = array()) {
 		$plugins = $this->collect($options);
 
-		if(isset($options['key']) === true) {
-
+		if(isset($options['key']) === true && $plugins->has($options['key']) === true) {
+			return $plugins->get($options['key']);
 		}
+
+		return null;
 	}
 
 	/**
@@ -70,7 +72,13 @@ class Plugin extends Application {
 		if($filesystem->exists($directory . DIRECTORY_SEPARATOR . 'Bootstrap.php') === true) {
 			$filesystem->requireOnce($directory . DIRECTORY_SEPARATOR . 'Bootstrap.php');
 
-			return new $bootstrap();
+			$plugin = new $bootstrap();
+			$plugin->fill(array(
+				'installed'	=> false,
+				'namespace' => $namespace
+			));
+
+			return $plugin;
 		}
 
 		return null;

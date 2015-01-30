@@ -17,6 +17,13 @@ class Bootstrap extends \Eloquent {
 	 */
 	 protected $installed = false;
 
+	/**
+	 * namespace of this plugin
+	 *
+	 * @var string $namespace
+	 */
+	 protected $namespace;
+
 	 /**
 	  * returns the name of the plugin
 	  *
@@ -47,6 +54,26 @@ class Bootstrap extends \Eloquent {
 	 */
 	public function setInstalledAttribute($installed) {
 		$this->installed = $installed;
+		return $this;
+	}
+
+	/**
+	 * Gets the namespace of the plugin
+	 *
+	 * @return string $namespace
+	 */
+	public function getNamespaceAttribute() {
+		return $this->namespace;
+	}
+
+	/**
+	 * Sets the namespace
+	 *
+	 * @param string $namespace
+	 * @return self
+	 */
+	public function setNamespaceAttribute($namespace) {
+		$this->namespace = $namespace;
 		return $this;
 	}
 
