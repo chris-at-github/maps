@@ -5,8 +5,9 @@ return array(
 		'name'	=> 'Name'
 	),
 	'action'	=> array(
-		'save'	=> 'Speichern',
-		'load'	=> 'Laden',
+		'save'		=> 'Speichern',
+		'load'		=> 'Laden',
+		'install'	=> 'Installieren',
 	),
 	'navigation' => array(
 		'world' 	=> 'World',

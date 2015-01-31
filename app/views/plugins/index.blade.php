@@ -17,7 +17,7 @@
 									@if($tile->installed === true)
 
 									@else
-										<a href="{{route('plugin.install', ['key' => $key])}}" class="button">{{{Lang::get('application.actions.install')}}}</a>
+										<a href="{{route('plugin.install', ['key' => $key])}}" class="button">{{{Lang::get('application.action.install')}}}</a>
 									@endif
 								</div>
 							</li>

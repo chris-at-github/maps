@@ -21,10 +21,10 @@ class PluginController extends \App\Controllers\ApplicationController {
 			));
 
 			if($install->save() === false) {
-				return \Redirect::route('plugin.index')->with('error', 'Plugin konnte nicht installiert werden');
+				return \Redirect::route('plugin.index')->with('error', \Lang::get('plugins.error.install'));
 			}
 		}
 
-		return \Redirect::route('plugin.index')->with('notice', 'Plugin erfolgreich installiert');
+		return \Redirect::route('plugin.index')->with('notice', \Lang::get('plugins.notice.install'));
 	}
 }
