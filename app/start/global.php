@@ -98,7 +98,7 @@ require app_path().'/filters.php';
 | App Events
 |--------------------------------------------------------------------------
 |
-| Check if a notice or error flash message exist
+| Check if a notice or error flash message exist and check if a user exists
 |
 */
 App::before(function($request) {
@@ -109,4 +109,14 @@ App::before(function($request) {
   if(\Session::has('error') === true) {
   	View::share('error', \Session::get('error'));
   }
+});
+
+App::before(function($request) {
+	$user = null;
+
+  if(\Session::has('user') === true) {
+  	$user = 'Chris';
+  }
+
+  View::share('user', $user);
 });

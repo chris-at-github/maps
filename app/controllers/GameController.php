@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 class GameController extends ApplicationController {
 	public function index() {
-		if(\Session::has('user.id') === false) {
+		if(\Session::has('user') === false) {
 			return \Redirect::route('game.login');
 		}
 
