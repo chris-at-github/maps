@@ -1,4 +1,4 @@
-		@include('partials.roadmap')
+		{{-- @include('partials.roadmap') --}}
 
 		</div>
 	</div>

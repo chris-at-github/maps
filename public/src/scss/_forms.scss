@@ -49,7 +49,6 @@ select {
 }
 
 .form-label label {
-	font-size: 12px;
 	font-weight: 400;
 }
 
@@ -115,6 +114,7 @@ a.button {
 
 .button-submit:hover, .button-submit:focus {
 	background-color: $blue-dark;
+	color: $white;
 }
 
 .button-small {

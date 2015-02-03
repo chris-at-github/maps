@@ -13,18 +13,21 @@
 }
 
 html {
+	height: 100%;
 	overflow-y: scroll;
 	-webkit-text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
 }
 
 body {
+	position: relative;
+	min-height: 100%;
 	@include font-default();
 	background: #f8f8f8;
 }
 
 input, textarea, select, #{$button} {
-	@include font-default(12px, 1);
+	@include font-default(14px, 1);
 }
 
 .ie9 {
@@ -225,4 +228,14 @@ nav a:hover, nav a:focus, nav a:active {
 
 .text-inline {
 	margin: 0;
+}
+
+.vertical-center {
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
