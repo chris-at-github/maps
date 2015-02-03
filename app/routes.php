@@ -12,7 +12,7 @@ Route::get('/', array(
 	'uses'	=> 'App\Controllers\GameController@index'
 ));
 
-Route::get('/login', array(
+Route::any('/login', array(
 	'as'		=> 'game.login',
 	'uses'	=> 'App\Controllers\GameController@login'
 ));
