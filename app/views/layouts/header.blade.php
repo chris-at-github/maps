@@ -12,13 +12,16 @@
 <body>
 
 	<div id="page">
-		<div id="header">
-			<div id="menu-main">
-				<ul class="list-inline">
-					<li><a href="{{route('world.index')}}">{{Lang::get('application.navigation.world')}}</a></li>
-					<li><a href="{{route('plugin.index')}}">{{Lang::get('application.navigation.plugins')}}</a></li>
-				</ul>
+
+		@if($user !== null)
+			<div id="header">
+				<div id="menu-main">
+					<ul class="list-inline">
+						<li><a href="{{route('world.index')}}">{{Lang::get('application.navigation.world')}}</a></li>
+						<li><a href="{{route('plugin.index')}}">{{Lang::get('application.navigation.plugins')}}</a></li>
+					</ul>
+				</div>
 			</div>
-		</div>
+		@endif
 
 		<div id="body">

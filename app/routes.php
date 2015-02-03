@@ -5,10 +5,20 @@ Route::model('map', 'App\Models\World\Map', function() {
 	throw new \App\Exceptions\World\Map(null, \App\Exceptions\World\Map::NOT_FOUND);
 });
 
+// Routes for the game controller
+// -------------------------------------------------------------------------------
+Route::get('/', array(
+	'as'		=> 'game.index',
+	'uses'	=> 'App\Controllers\GameController@index'
+));
+
+Route::get('/login', array(
+	'as'		=> 'game.login',
+	'uses'	=> 'App\Controllers\GameController@login'
+));
+
 // Routes for the world controller
 // -------------------------------------------------------------------------------
-Route::get('/', 'App\Controllers\World\MapController@wizard');
-
 Route::any('world/store/{id?}', array(
 	'as'		=> 'world.store',
 	'uses' 	=> 'App\Controllers\World\MapController@store'
@@ -34,7 +44,7 @@ Route::get('world/{map?}', array('as' => 'world.index', function($map = null) {
 Route::get('world/tile/{x}/{y}', 'App\Controllers\World\TileController@index');
 
 
-// Routes for plugin controllers
+// Routes for plugin controller
 // -------------------------------------------------------------------------------
 Route::get('plugins/', array(
 	'as'		=> 'plugin.index',
