@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('layouts.header', array('header' => false))
 
 
 		<div class="vertical-center">

@@ -13,7 +13,7 @@
 
 	<div id="page">
 
-		@if($user !== null)
+		@if(isset($header) === false || $header === true)
 			<div id="header">
 				<div id="menu-main">
 					<ul class="list-inline">
