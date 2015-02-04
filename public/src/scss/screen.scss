@@ -141,13 +141,18 @@
 .container {
 	& {
 		margin: 15px 0 0 0;
-		padding: 8px;
-		border-top: 2px solid $blue;
+		padding: 15px;
+		border: 1px solid $grey-lighter;
 		background: $white;
 	}
 
-	&.container-grey {
-		border-color: $grey-lighter;
+	&.container-blue {
+		background: $blue;
+		color: $white;
+	}
+
+	&.container-border {
+		border: 3px solid $grey-lighter;
 	}
 
 	&:first-child {
